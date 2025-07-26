@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioGenix - Advanced AI Voice Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+        
+        .feature-circle {
+            background: conic-gradient(from 0deg, #667eea, #764ba2, #f093fb, #f5576c, #667eea);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .logo-a {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;    
+            border-bottom: 25px solid #f093fb;
+        }
+        
+        .logo-g {
+            width: 25px;
+            height: 25px;
+            border: 3px solid #667eea;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Landing Page -->
+    <div id="landingPage" class="min-h-screen">
+        <!-- Header -->
+        <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <!-- Logo -->
+                        <div class="flex items-center space-x-1">
+                            <div class="logo-a"></div>
+                            <div class="logo-g"></div>
+                        </div>
+                        <h1 class="text-2xl font-bold gradient-text">AudioGenix</h1>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#features" class="hover:text-purple-400 transition-colors">Features</a>
+                        <a href="#pricing" class="hover:text-purple-400 transition-colors">Pricing</a>
+                        <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+                    </div>
+                    <button onclick="showApp()" class="bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-2 rounded-lg hover:shadow-lg transition-all">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="mb-8">
+                    <h2 class="text-6xl md:text-8xl font-bold mb-6">
+                        <span class="gradient-text">Revolutionary</span><br>
+                        <span class="text-white">AI Voice Assistant</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+                        Experience the future of voice technology with AudioGenix. Advanced AI that understands, remembers, and evolves with every conversation.
+                    </p>
+                </div>
+
+                <button onclick="showApp()" class="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 mb-16">
+                    <span class="relative z-10 flex items-center justify-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m2-10h.01M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                        Try AudioGenix Free
+                    </span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+
+                <!-- Features Circle with Bot -->
+                <div class="relative flex justify-center items-center">
+                    <!-- Rotating Feature Circle -->
+                    <div class="feature-circle w-96 h-96 rounded-full p-1">
+                        <div class="w-full h-full bg-gray-900 rounded-full flex items-center justify-center relative">
+                            <!-- Feature Labels around the circle -->
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-center">
+                                <div class="bg-purple-600 px-3 py-1 rounded-full text-sm font-medium">Cross-Session Memory</div>
+                            </div>
+                            <div class="absolute top-1/4 -right-8 transform rotate-45 text-center">
+                                <div class="bg-indigo-600 px-3 py-1 rounded-full text-sm font-medium transform -rotate-45">Real-time Processing</div>
+                            </div>
+                            <div class="absolute bottom-1/4 -right-8 transform -rotate-45 text-center">
+                                <div class="bg-pink-600 px-3 py-1 rounded-full text-sm font-medium transform rotate-45">Voice Synthesis</div>
+                            </div>
+                            <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+                                <div class="bg-purple-500 px-3 py-1 rounded-full text-sm font-medium">Smart Learning</div>
+                            </div>
+                            <div class="absolute bottom-1/4 -left-8 transform rotate-45 text-center">
+                                <div class="bg-indigo-500 px-3 py-1 rounded-full text-sm font-medium transform -rotate-45">Multi-language</div>
+                            </div>
+                            <div class="absolute top-1/4 -left-8 transform -rotate-45 text-center">
+                                <div class="bg-pink-500 px-3 py-1 rounded-full text-sm font-medium transform rotate-45">Context Aware</div>
+                            </div>
+                            
+                            <!-- Bot in the center -->
+                            <div class="floating-animation">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='botGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea'/%3E%3Cstop offset='100%25' style='stop-color:%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='80' r='45' fill='url(%23botGrad)' opacity='0.9'/%3E%3Ccircle cx='85' cy='70' r='6' fill='white'/%3E%3Ccircle cx='115' cy='70' r='6' fill='white'/%3E%3Crect x='95' y='85' width='10' height='8' rx='2' fill='%23333'/%3E%3Ccircle cx='100' cy='140' r='35' fill='url(%23botGrad)' opacity='0.8'/%3E%3Crect x='85' y='125' width='30' height='20' rx='5' fill='%23764ba2'/%3E%3Ccircle cx='100' cy='45' r='8' fill='%23f093fb'/%3E%3Cpath d='M70 100 Q100 120 130 100' stroke='%23764ba2' stroke-width='3' fill='none'/%3E%3C/svg%3E" 
+                                     alt="AI Bot" class="w-32 h-32">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- App Interface -->
+    <div id="appInterface" class="hidden min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
+        <!-- App Header -->
+        <header class="bg-gray-800/50 backdrop-blur-md border-b border-gray-700">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <div class="logo-a"></div>
+                            <div class="logo-g"></div>
+                        </div>
+                        <h1 class="text-2xl font-bold gradient-text">AudioGenix</h1>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-green-500 rounded-full pulse-ring"></div>
+                            <span class="text-sm text-gray-300">AI Active</span>
+                        </div>
+                        <button onclick="showLanding()" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main App Content -->
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Voice Control Panel -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Voice Visualizer -->
+                    <div class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                            </svg>
+                            Voice Assistant
+                        </h3>
+                        
+                        <!-- Audio Visualizer -->
+                        <div class="flex items-center justify-center h-32 mb-6">
+                            <div id="audioVisualizer" class="flex items-end space-x-1">
+                                <div class="w-2 bg-purple-500 rounded-full transition-all duration-200" style="height: 20px"></div>
+                                <div class="w-2 bg-indigo-500 rounded-full transition-all duration-200" style="height: 40px"></div>
+                                <div class="w-2 bg-pink-500 rounded-full transition-all duration-200" style="height: 60px"></div>
+                                <div class="w-2 bg-purple-400 rounded-full transition-all duration-200" style="height: 30px"></div>
+                                <div class="w-2 bg-indigo-400 rounded-full transition-all duration-200" style="height: 50px"></div>
+                                <div class="w-2 bg-pink-400 rounded-full transition-all duration-200" style="height: 25px"></div>
+                                <div class="w-2 bg-purple-500 rounded-full transition-all duration-200" style="height: 45px"></div>
+                            </div>
+                        </div>
+
+                        <!-- Voice Controls -->
+                        <div class="flex justify-center space-x-4">
+                            <button id="recordBtn" onclick="toggleRecording()" class="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                                </svg>
+                                <span id="recordText">Start Recording</span>
+                            </button>
+                            <button onclick="playResponse()" class="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m2-10h.01M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                                Play Response
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chat Interface -->
+                    <div class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            Conversation
+                        </h3>
+                        
+                        <div id="chatContainer" class="h-64 overflow-y-auto mb-4 space-y-3 p-4 bg-gray-900/30 rounded-xl">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-sm font-bold">AI</div>
+                                <div class="bg-gray-700 rounded-lg px-4 py-2 max-w-xs">
+                                    <p class="text-sm">Hello! I'm AudioGenix, your AI voice assistant. How can I help you today?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <input id="messageInput" type="text" placeholder="Type your message..." class="flex-1 bg-gray-700 border border-gray-600 rounded-xl px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <button onclick="sendMessage()" class="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white px-6 py-2 rounded-xl transition-all duration-300">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <!-- AI Status -->
+                    <div class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+                        <h3 class="text-lg font-semibold mb-4">AI Status</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-300">Processing Speed</span>
+                                <span class="text-green-400 font-semibold">Fast</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-300">Memory Active</span>
+                                <span class="text-blue-400 font-semibold">Yes</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-300">Voice Quality</span>
+                                <span class="text-purple-400 font-semibold">High</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+                        <h3 class="text-lg font-semibold mb-4">Quick Actions</h3>
+                        <div class="space-y-2">
+                            <button onclick="clearMemory()" class="w-full text-left px-3 py-2 hover:bg-gray-700 rounded-lg transition-colors text-sm">
+                                Clear Memory
+                            </button>
+                            <button onclick="exportConversation()" class="w-full text-left px-3 py-2 hover:bg-gray-700 rounded-lg transition-colors text-sm">
+                                Export Chat
+                            </button>
+                            <button onclick="changeVoice()" class="w-full text-left px-3 py-2 hover:bg-gray-700 rounded-lg transition-colors text-sm">
+                                Change Voice
+                            </button>
+                            <button onclick="toggleTheme()" class="w-full text-left px-3 py-2 hover:bg-gray-700 rounded-lg transition-colors text-sm">
+                                Toggle Theme
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Settings -->
+                    <div class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+                        <h3 class="text-lg font-semibold mb-4">Settings</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm text-gray-300 mb-2">Voice Speed</label>
+                                <input type="range" min="0.5" max="2" step="0.1" value="1" class="w-full" onchange="updateVoiceSpeed(this.value)">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-300 mb-2">Language</label>
+                                <select class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2" onchange="changeLanguage(this.value)">
+                                    <option value="en-US">English (US)</option>
+                                    <option value="en-GB">English (UK)</option>
+                                    <option value="es-ES">Spanish</option>
+                                    <option value="fr-FR">French</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isRecording = false;
+        let recognition;
+        let synthesis = window.speechSynthesis;
+        let currentVoice = null;
+        let conversationMemory = [];
+        let voiceSpeed = 1;
+        let currentLanguage = 'en-US';
+
+        // Initialize speech recognition
+        if ('webkitSpeechRecognition' in window) {
+            recognition = new webkitSpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = true;
+            recognition.lang = currentLanguage;
+            
+            recognition.onstart = function() {
+                animateVisualizer();
+            };
+            
+            recognition.onresult = function(event) {
+                let transcript = '';
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    if (event.results[i].isFinal) {
+                        transcript += event.results[i][0].transcript;
+                    }
+                }
+                if (transcript) {
+                    addMessage('user', transcript);
+                    processVoiceInput(transcript);
+                }
+            };
+            
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+                addMessage('system', 'Sorry, I had trouble hearing you. Please try again.');
+                stopRecording();
+            };
+        }
+
+        // Navigation functions
+        function showApp() {
+            document.getElementById('landingPage').classList.add('hidden');
+            document.getElementById('appInterface').classList.remove('hidden');
+        }
+
+        function showLanding() {
+            document.getElementById('appInterface').classList.add('hidden');
+            document.getElementById('landingPage').classList.remove('hidden');
+        }
+
+        // Voice recording functions
+        function toggleRecording() {
+            if (isRecording) {
+                stopRecording();
+            } else {
+                startRecording();
+            }
+        }
+
+        function startRecording() {
+            if (recognition) {
+                isRecording = true;
+                recognition.start();
+                document.getElementById('recordBtn').innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="6" y="6" width="12" height="12" rx="2"/>
+                    </svg>
+                    <span>Stop Recording</span>
+                `;
+                document.getElementById('recordBtn').classList.remove('from-red-500', 'to-pink-500');
+                document.getElementById('recordBtn').classList.add('from-gray-500', 'to-gray-600');
+            }
+        }
+
+        function stopRecording() {
+            if (recognition && isRecording) {
+                isRecording = false;
+                recognition.stop();
+                document.getElementById('recordBtn').innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                    </svg>
+                    <span>Start Recording</span>
+                `;
+                document.getElementById('recordBtn').classList.remove('from-gray-500', 'to-gray-600');
+                document.getElementById('recordBtn').classList.add('from-red-500', 'to-pink-500');
+                stopVisualizer();
+            }
+        }
+
+        // Chat functions
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            if (message) {
+                addMessage('user', message);
+                input.value = '';
+                processTextInput(message);
+            }
+        }
+
+        function addMessage(sender, message) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start gap-3';
+            
+            const isUser = sender === 'user';
+            const isSystem = sender === 'system';
+            
+            messageDiv.innerHTML = `
+                <div class="w-8 h-8 ${isUser ? 'bg-gradient-to-r from-green-500 to-teal-500' : isSystem ? 'bg-gradient-to-r from-yellow-500 to-orange-500' : 'bg-gradient-to-r from-purple-500 to-indigo-500'} rounded-full flex items-center justify-center text-sm font-bold">
+                    ${isUser ? 'U' : isSystem ? 'S' : 'AI'}
+                </div>
+                <div class="bg-gray-700 rounded-lg px-4 py-2 max-w-xs">
+                    <p class="text-sm">${message}</p>
+                </div>
+            `;
+            
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            
+            // Add to memory
+            conversationMemory.push({sender, message, timestamp: new Date()});
+        }
+
+        // AI Processing functions
+        function processVoiceInput(transcript) {
+            processTextInput(transcript);
+        }
+
+        function processTextInput(input) {
+            // Simulate AI processing
+            setTimeout(() => {
+                const response = generateAIResponse(input);
+                addMessage('ai', response);
+                speakResponse(response);
+            }, 1000);
+        }
+
+        function generateAIResponse(input) {
+            const responses = {
+                'hello': 'Hello! How can I assist you today?',
+                'how are you': 'I\'m doing great! Ready to help you with anything you need.',
+                'what can you do': 'I can help with voice recognition, text-to-speech, conversations, and much more!',
+                'time': `The current time is ${new Date().toLocaleTimeString()}.`,
+                'date': `Today is ${new Date().toLocaleDateString()}.`,
+                'weather': 'I would need access to weather services to provide current weather information.',
+                'memory': `I remember our conversation history. We've exchanged ${conversationMemory.length} messages so far.`,
+                'clear': 'I understand you want to clear something. What would you like me to clear?',
+                'export': 'I can help you export our conversation. Use the export button in the quick actions.',
+                'voice': 'I can change my voice settings. You can adjust the voice speed and language in the settings panel.',
+                'default': 'That\'s interesting! I\'m here to help with whatever you need. Feel free to ask me anything or try using voice commands.'
+            };
+
+            const lowerInput = input.toLowerCase();
+            for (const [key, response] of Object.entries(responses)) {
+                if (lowerInput.includes(key)) {
+                    return response;
+                }
+            }
+            return responses.default;
+        }
+
+        // Text-to-speech functions
+        function speakResponse(text) {
+            if (synthesis) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = voiceSpeed;
+                utterance.lang = currentLanguage;
+                if (currentVoice) {
+                    utterance.voice = currentVoice;
+                }
+                synthesis.speak(utterance);
+            }
+        }
+
+        function playResponse() {
+            const lastAIMessage = conversationMemory.filter(msg => msg.sender === 'ai').pop();
+            if (lastAIMessage) {
+                speakResponse(lastAIMessage.message);
+            }
+        }
+
+        // Visual effects
+        function animateVisualizer() {
+            const visualizer = document.getElementById('audioVisualizer');
+            const bars = visualizer.children;
+            
+            const animate = () => {
+                if (isRecording) {
+                    Array.from(bars).forEach(bar => {
+                        const height = Math.random() * 60 + 10;
+                        bar.style.height = height + 'px';
+                    });
+                    requestAnimationFrame(animate);
+                }
+            };
+            animate();
+        }
+
+        function stopVisualizer() {
+            const visualizer = document.getElementById('audioVisualizer');
+            const bars = visualizer.children;
+            Array.from(bars).forEach((bar, index) => {
+                bar.style.height = (20 + index * 10) + 'px';
+            });
+        }
+
+        // Settings functions
+        function updateVoiceSpeed(speed) {
+            voiceSpeed = parseFloat(speed);
+        }
+
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            if (recognition) {
+                recognition.lang = lang;
+            }
+        }
+
+        function changeVoice() {
+            const voices = synthesis.getVoices();
+            const currentIndex = voices.indexOf(currentVoice);
+            const nextIndex = (currentIndex + 1) % voices.length;
+            currentVoice = voices[nextIndex];
+            addMessage('system', `Voice changed to: ${currentVoice ? currentVoice.name : 'Default'}`);
+        }
+
+        // Quick action functions
+        function clearMemory() {
+            conversationMemory = [];
+            document.getElementById('chatContainer').innerHTML = `
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-sm font-bold">AI</div>
+                    <div class="bg-gray-700 rounded-lg px-4 py-2 max-w-xs">
+                        <p class="text-sm">Memory cleared! Hello again, I'm AudioGenix. How can I help you?</p>
+                    </div>
+                </div>
+            `;
+            addMessage('system', 'Conversation memory has been cleared.');
+        }
+
+        function exportConversation() {
+            const conversation = conversationMemory.map(msg => 
+                `[${msg.timestamp.toLocaleString()}] ${msg.sender.toUpperCase()}: ${msg.message}`
+            ).join('\n');
+            
+            const blob = new Blob([conversation], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `audiogenix-conversation-${new Date().toISOString().split('T')[0]}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            addMessage('system', 'Conversation exported successfully!');
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains('bg-gray-900')) {
+                body.classList.remove('bg-gray-900');
+                body.classList.add('bg-white', 'text-gray-900');
+                addMessage('system', 'Switched to light theme!');
+            } else {
+                body.classList.remove('bg-white', 'text-gray-900');
+                body.classList.add('bg-gray-900');
+                addMessage('system', 'Switched to dark theme!');
+            }
+        }
+
+        // Event listeners
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initialize voices when available
+        if (synthesis) {
+            synthesis.onvoiceschanged = function() {
+                const voices = synthesis.getVoices();
+                currentVoice = voices.find(voice => voice.lang === currentLanguage) || voices[0];
+            };
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load voices
+            if (synthesis) {
+                const voices = synthesis.getVoices();
+                if (voices.length === 0) {
+                    synthesis.onvoiceschanged = function() {
+                        const availableVoices = synthesis.getVoices();
+                        currentVoice = availableVoices.find(voice => voice.lang === currentLanguage) || availableVoices[0];
+                    };
+                } else {
+                    currentVoice = voices.find(voice => voice.lang === currentLanguage) || voices[0];
+                }
+            }
+            
+            // Add welcome message to memory
+            conversationMemory.push({
+                sender: 'ai',
+                message: 'Hello! I\'m AudioGenix, your AI voice assistant. How can I help you today?',
+                timestamp: new Date()
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-#  AudiaGenix
+  AudiaGenix
 
 > Next-generation intelligent customer support voice assistant  
 
@@ -21,7 +21,7 @@ It proactively detects user sentiment and intent, recognizes domain-specific voc
 ---
 
 
-## How to Run Locally
+ How to Run Locally
 
 ```bash
 git clone https://github.com/yourusername/audiagenix.git
